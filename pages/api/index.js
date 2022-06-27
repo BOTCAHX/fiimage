@@ -1,7 +1,7 @@
 import Ajv from 'ajv'
 import addFormats from 'ajv-formats'
 import axios from 'axios'
-import nodeHtmlToImage from 'node-html-to-image'
+// import nodeHtmlToImage from 'node-html-to-image'
 
 const ajv = new Ajv()
 addFormats(ajv)
@@ -27,11 +27,11 @@ export default async function index(req, res) {
     await axios(url)
       .then(async ({ data }) => {
         const html = data
-        const image = await nodeHtmlToImage({
-          html
-        })
+        // const image = await nodeHtmlToImage({
+        //   html
+        // })
 
-        console.log(image)
+        console.log(html)
         res.send('OK')
       })
       .catch((error) => {
