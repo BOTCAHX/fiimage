@@ -27,7 +27,11 @@ export default async function index(req, res) {
       .then(async ({ data }) => {
         const html = data
         const image = await nodeHtmlToImage({
-          html
+          html,
+          puppeteerArgs: {
+            headless: true,
+            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+          }
         })
 
         res.writeHead(200, { 'Content-Type': 'image/png' })
