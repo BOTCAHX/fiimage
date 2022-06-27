@@ -34,11 +34,13 @@ export default async function index(req, res) {
           }
         })
 
-        res.writeHead(200, { 'Content-Type': 'image/png' })
-        res.end(image, 'binary')
+        // res.writeHead(200, { 'Content-Type': 'image/png' })
+        // res.send(image, 'binary')
+
+        res.send('OK')
       })
       .catch((error) => {
-        res.status(500).json(error)
+        res.status(500).json('Gagal')
       })
   }
 }
