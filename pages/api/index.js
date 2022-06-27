@@ -34,8 +34,7 @@ export default async function index(req, res) {
         res.end(image, 'binary')
       })
       .catch((error) => {
-        console.log(error)
-        res.status(500).send('Gagal memuat gambar.')
+        res.status(500).json(error)
       })
   }
 }
